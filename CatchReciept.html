@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>Rand Spa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="content/img/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/invoce.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="invoice row no-gutters">
+    <div class="invoice-container justify-content-center no-gutters">
+        <div class="invoice-container-Header row">
+            <div class="invoice-container-Header-title col-9 text-right">
+                <h1>سند قبض</h1>
+                 <p class="address"> اسم الشركة</p>
+            </div>
+
+            <div class="invoice-container-Header-logo col-3">
+                <img src="content/img/Logo.png" alt="....">
+            </div>
+        </div>
+        <div class="invoice-container-Body delivery-Reciept">
+            <div class="invoice-container-Body-Header row">
+                <p class="col-4 price">المبلغ(ريال سعودي): <span> 123456</span></p>
+                <p class="col-4">رقم السند: <span>0123456789</span></p>
+                <p class="col-4">التاريخ: <span>2019-11-14</span></p>
+            </div>
+            <div class="divider"></div>
+            <div class="invoice-container-Body-Container delivery-Reciept-Body row no-gutters">
+                <P class="col-12">استلمنا من: <span>......................................................................</span></P>
+                <P class="col-12">مبلغ و قدره: <span>......................................................................</span></P>
+                <P class="col-8">وذلك مقابل: <span>......................................................................</span></P>
+                <div class="form-group col-4 no-gutters row">
+                    <span class="col-12">طريقة الدفع</span>
+                    <div class="custom-control custom-radio pr-4">
+                        <input type="radio" id="customRadio111" name="customRadio11" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio111">نقدي</label>
+                    </div>
+                    <div class="custom-control custom-radio pr-4">
+                        <input type="radio" id="customRadio211" name="customRadio11" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio211">شبكة</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="invoice-container-Body-Footer row">
+                <P class="col-3">المستلم: <span>......................................................................</span></P>
+                <P class="col-3">المحاسب: <span>......................................................................</span></P>
+                <P class="col-3">المدير العام: <span>......................................................................</span></P>
+                <p id="time" class="col-2"></p>
+
+            </div>
+        </div>
+
+        <div class="invoice-container-Footer">
+            <div class="col-12 row no-gutters">
+                <p class="address col-5"><span class="fas fa-map-marker-alt"></span> 6 شارع - 15 مدينة - الاسكندرية - مصر</p>
+                <p class="address col-5"><span class="fas fa-mobile-alt"></span>0123456789</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="content/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap/js/popper.js"></script>
+    <script src="content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="content/js/moment.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/js/main.js"></script>
+    <!--===============================================================================================-->
+
+    <script>
+        var datetime = null,
+        date = null;
+
+var update = function () {
+    date = moment(new Date())
+    datetime.html(date.format('h:mm:ss a'));
+};
+
+$(document).ready(function(){
+    datetime = $('#time')
+    update();
+    setInterval(update, 1000);
+});
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>Rand Spa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="content/img/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/invoce.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="invoice row no-gutters">
+    <div class="invoice-container justify-content-center no-gutters">
+        <div class="invoice-container-Header row">
+            <div class="invoice-container-Header-title col-9 text-right">
+                <h1>فاتورة</h1>
+                 <p class="address"> اسم الشركة</p>
+                <p class="address">رقم السجل التجاري: <span>123456</span></p>
+            </div>
+
+            <div class="invoice-container-Header-logo col-3">
+                <img src="content/img/Logo.png" alt="....">
+            </div>
+        </div>
+        <div class="invoice-container-Body">
+            <div class="invoice-container-Body-Header row">
+                <p class="col-4">رقم الفاتورة: <span> 123456</span></p>
+                <p class="col-4">اسم العميلة: <span>لوريم ايبسوم</span></p>
+                <p class="col-4">رقم الهاتف: <span>0123456789</span></p>
+                <p class="col-3">التاريخ: <span>2019-11-14</span></p>
+                <p class="col-3">اسم الموظف: <span>لوريم ايبسوم</span></p>
+                <p class="col-3">كود الموظف: <span>150505</span></p>
+                <div class="form-group col-3 no-gutters row">
+                    <span class="col-7">طريقة الدفع:</span>
+                    <div class="custom-control custom-radio col-6 pr-4">
+                        <input type="radio" id="customRadio111" name="customRadio11" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio111">نقدي</label>
+                    </div>
+                    <div class="custom-control custom-radio pr-4">
+                        <input type="radio" id="customRadio211" name="customRadio11" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio211">شبكة</label>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="invoice-container-Body-Container row no-gutters">
+                <div class="table-responsive p-4">
+                    <table id="table_id" dir="rtl" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">م</th>
+                                <th style="width: 45%;">اسم الخدمة / العرض</th>
+                                <th style="width: 20%;">العدد</th>
+                                <th style="width: 20%;">السعر (ريال سعودي)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>الخدمة الاولى</td>
+                                <td>1</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>الخدمة الاولى</td>
+                                <td>1</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>الخدمة الاولى</td>
+                                <td>1</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>الخدمة الاولى</td>
+                                <td>1</td>
+                                <td>100</td>
+                            </tr>
+                            <tr class="totals">
+                                <td colspan="2"></td>
+                                <td>الخصم</td>
+                                <td>50</td>
+                            </tr>
+                            <tr class="totals">
+                                <td colspan="2"></td>
+                                <td>الضريبة</td>
+                                <td>100</td>
+                            </tr>
+                            <tr class="totals">
+                                <td colspan="2"></td>
+                                <td>الاجمالي</td>
+                                <td>400</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="invoice-container-Body-Footer row">
+            </div>
+        </div>
+
+        <div class="invoice-container-Footer justify-content-center">
+            <div class="col-12 row no-gutters">
+                <p class="address col-6"><span class="fas fa-map-marker-alt"></span> 6 شارع - 15 مدينة - الاسكندرية - مصر</p>
+                <p class="address col-6"><span class="fas fa-mobile-alt"></span>0123456789</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="content/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap/js/popper.js"></script>
+    <script src="content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/js/main.js"></script>
+    <!--===============================================================================================-->
+
+</body>
+
+</html>

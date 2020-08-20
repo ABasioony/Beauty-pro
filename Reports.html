@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>Rand Spa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="content/img/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/fontawesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/awsome-select/css/awselect.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/ericjgagnon-wickedpicker/dist/wickedpicker.min.css">
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/util.css">
+    <link rel="stylesheet" type="text/css" href="content/css/style.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+
+
+
+    <!--===============================================================================================-->
+    <script src="content/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/awsome-select/js/awselect.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/daterangepicker/moment.min.js"></script>
+    <script src="content/vendors/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/ericjgagnon-wickedpicker/dist/wickedpicker.min.js"></script>
+    <script src="content/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/js/main.js"></script>
+    <script src="content/js/Script.js"></script>
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-100">
+
+            <div class="wrap-100 p-b-50 col-md-4 col-12">
+                <img src="content/img/Logo.png" alt="">
+            </div>
+            <div class="col-9 row justify-content-center">
+
+                <!--                 <a class="btn btn-menu draw-border m-2" data-toggle="modal" data-target="#permissionsModal">صلاحيات المستخدم</a> -->
+            </div>
+            <div class="wrap-container box-shadow col-11 row p-md-4 p-2" style="background: #fff;">
+                <div class="wrap-container-header col-12 row no-gutters mb-4">
+                    <h3 class="col-md-3 col-12">تقارير</h3>
+                    <div class="wrap-container-header-tools col text-left">
+                        <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#AddUser">انشاء تقرير</a>
+                    </div>
+                </div>
+                <form class="row">
+                    <div class="input form-group col-12 mt-2">
+                        <select class="js-example-basic-single" data-placeholder="اختر نوع التقرير" name="state">
+                                <option value="AL">يومية الخزينة</option>
+                                <option value="WY">فواتير</option>
+                                <option value="WY">تحصيلات</option>
+                                <option value="WY">سندات صرف</option>
+                                <option value="WY">سندات قبض</option>
+                                <option value="WY">باسم العاملة</option>
+                        </select>
+                        <label class="select mb-1">
+                            اختر التصنيف العام
+                        </label>
+                    </div>
+                    <div class="input form-group col-md-3 col-sm-6 col-12">
+                        <input type="text" class="timepicker" id="input-fromDate" />
+                        <label for="input-fromDate"> من ساعة</label>
+                    </div>
+                    <div class="input form-group col-md-3 col-sm-6 col-12">
+                        <input type="text" class="fdatepickere" id="input-fromDate" />
+                        <label for="input-fromDate"> من تاريخ</label>
+                    </div>
+                    <div class="input form-group col-md-3 col-sm-6 col-12">
+                        <input type="text" class="fdatepickere" id="input-toDate" />
+                        <label for="input-toDate"> الى تاريخ</label>
+                    </div>
+                    <div class="input form-group col-md-3 col-sm-6 col-12">
+                        <input type="text" class="timepicker" id="input-toTime" />
+                        <label for="input-toTime"> الى ساعة</label>
+                    </div>
+                </form>
+            </div>
+            <footer class="sticky-footer bg-white-5 m-3 pos-fixed">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        Copyright © 2019 <a href="http://www.g7-soft.com/" target="_blank">G7 Software House.</a> All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+            <nav class="social">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>الصفحة الرئيسية </a></li>
+                    <li><a data-toggle="modal" data-target="#ChangePassword"><i class="fas fa-lock"></i>تغيير كلمة المرور </a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i>تسجيل خروج </a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+
+    <div id="dropDownSelect1"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').awselect();
+            $('.timepicker').wickedpicker({
+                container: ".container-100"
+            });
+            $(".fdatepickere").datepicker({
+                format: "yyyy/mm/dd",
+                container: ".container-100",
+                autoclose: true
+            });
+            const ps = new PerfectScrollbar('.dataTables_scrollBody', {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20
+            });
+        });
+    </script>
+</body>
+
+</html>

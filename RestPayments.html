@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>Rand Spa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="content/img/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/fontawesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/ag-grid.css">
+    <link rel="stylesheet" type="text/css" href="content/css/ag-theme-balham.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/util.css">
+    <link rel="stylesheet" type="text/css" href="content/css/style.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+
+
+
+    <!--===============================================================================================-->
+    <script src="content/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/daterangepicker/moment.min.js"></script>
+    <script src="content/vendors/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/ag-grid/ag-grid-community.min.noStyle.js"></script>
+    <script src="content/vendors/ag-grid/ag-grid-enterprise.min.noStyle.js"></script>
+    <script src="content/js/ag-grid-config.js"></script>
+<!--===============================================================================================-->
+    <script src="content/js/main.js"></script>
+    <script src="content/js/Script.js"></script>
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-100">
+
+            <div class="wrap-100 p-b-50 col-md-4 col-12">
+                <img src="content/img/Logo.png" alt="">
+            </div>
+            <div class="col-9 row justify-content-center">
+
+                <!--                 <a class="btn btn-menu draw-border m-2" data-toggle="modal" data-target="#permissionsModal">صلاحيات المستخدم</a> -->
+            </div>
+            <div class="wrap-container box-shadow col-11 row p-md-4 p-2" style="background: #fff;">
+                <div class="wrap-container-header col-12 row no-gutters mb-4">
+                    <h3 class="col-md-3 col-12">تحصيل باقي العملاء</h3>
+                    <div class="form-group col-4">
+                        <input type="text" id="filter-text-box" class="form-control" placeholder="بحث" oninput="onFilterTextBoxChanged()">
+                    </div>
+                    <div class="wrap-container-header-tools col text-left">
+                        <div class="col-12">
+                            <p for="input-Name">الاجمالي</p>
+                            <p class="valueTotal"> 9999999 <span>ر.س</span></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid col-12 no-gutters">
+                    <div id="myGrid" class="ag-theme-balham myGrid"></div>
+                </div>
+
+                
+            </div>
+            <footer class="sticky-footer bg-white-5 m-3 pos-fixed">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        Copyright © 2019 <a href="http://www.g7-soft.com/" target="_blank">G7 Software House.</a> All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+            <nav class="social">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>الصفحة الرئيسية </a></li>
+                    <li><a data-toggle="modal" data-target="#ChangePassword"><i class="fas fa-lock"></i>تغيير كلمة المرور </a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i>تسجيل خروج </a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <!--     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة مستخدم</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> اسم المستخدم </label>
+                        </div>
+                        <div class="input form-group col-6">
+                            <input type="password" id="input-password" />
+                            <label for="input-password"> كلمة السر </label>
+                        </div>
+                        <div class="input form-group col-6">
+                            <input type="text" id="input-passwordConfirmation" />
+                            <label for="input-passwordConfirmation"> تأكيد كلمة السر</label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> الوظيفة</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                </div>
+            </div>
+        </div>
+        
+    </div> -->
+
+    <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة عاملة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> اسم العاملة </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> الوظيفة</label>
+                        </div>
+                        <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل عاملة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> رقم الفاتورة </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> التاريخ</label>
+                        </div>
+
+                        <div class="input form-group col-sm-9 col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> اسم العميلة</label>
+                        </div>
+                        <div class="input form-group col-sm-3 col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> تاريخ التحصيل</label>
+                        </div>
+
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> المدفوع</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> المتبقي</label>
+                        </div>
+                        <!-- <div class="form-group col-11 text-right">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">نقدي</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">شيك</label>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ / طباعة</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تغيير كلمة السر</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="password" id="input-Newpassword" />
+                            <label for="input-Newpassword"> كلمة السر </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-NewpasswordConfirmation" />
+                            <label for="input-NewpasswordConfirmation"> تأكيد كلمة السر</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save-btn">Save changes</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="msg-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-body text-center">
+                    <img src="content/img/icons/remove.png" class="modal-img bordery">
+                    <h3 class="pt-5 mb-2 text-secondary">هل انت متأكد؟!</h3>
+                    <button type="button" class="btn btn-secondary mb-3 mt-1 close-btn" data-dismiss="modal">الغاء</button>
+                    <button type="button" class="btn btn-primary mb-3 mt-1 save-btn">نعم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="modal fade" id="permissionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تغيير كلمة السر</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table id="table_permissions" dir="rtl" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>اسم الصلاحية</th>
+                                    <th class="no-sort check text-center">مشاهدة</th>
+                                    <th class="no-sort check text-center">تعديل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>انشاء مستخدم</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>المستخدمين</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>صلاحيات المستخدم</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>تغيير كلمة المرور</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+                    <button type="button" class="btn btn-primary save-btn">pt/</button>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+    <div id="dropDownSelect1"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable({
+                scrollY: 300,
+                scrollX: false,
+                responsive: true,
+                scrollCollapse: true,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "الكل"]
+                ],
+                language: {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                },
+                columnDefs: [{
+                    targets: 'no-sort',
+                    orderable: false,
+                }],
+
+            });
+            const ps = new PerfectScrollbar('.dataTables_scrollBody', {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20
+            });
+        });
+    </script>
+
+
+
+
+<script>
+    // specify the columns
+    var columnDefs = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "رقم الفاتورة",
+            field: "ReciptNumber",
+            enableRowGroup: true
+        },
+        {
+            headerName: "التاريخ",
+            field: "Date",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الاسم",
+            field: "Name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الاجمالي",
+            field: "Total",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المدفوع",
+            field: "Paid",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المتبقي",
+            field: "Rest",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a style=\'cursor:pointer;\' class=\'btn btn-link btn-sm EditBtn\' data-toggle="modal" data-target="#editModal" title="دفع"><i class=\'far fa-money-bill-alt\'></i></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var data = [{}]
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefs,
+        rowData: data,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterTextBoxChanged() {
+        gridOptions.api.setQuickFilter(document.getElementById('filter-text-box').value);
+    }
+    // lookup the container we want the Grid to use
+    var eGridDiv = document.querySelector('#myGrid');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDiv, gridOptions);
+</script>
+
+</body>
+
+</html>

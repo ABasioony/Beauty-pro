@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <title>Rand Spa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="content/img/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/fontawesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/fontawesome-5.11.2/css/all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/awsome-select/css/awselect.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/ag-grid.css">
+    <link rel="stylesheet" type="text/css" href="content/css/ag-theme-balham.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/css/util.css">
+    <link rel="stylesheet" type="text/css" href="content/css/style.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="content/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+
+    <!--===============================================================================================-->
+    <script src="content/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/daterangepicker/moment.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/ag-grid/ag-grid-community.min.noStyle.js"></script>
+    <script src="content/vendors/ag-grid/ag-grid-enterprise.min.noStyle.js"></script>
+    <script src="content/js/ag-grid-config.js"></script>
+<!--===============================================================================================-->
+    <script src="content/vendors/awsome-select/js/awselect.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="content/js/main.js"></script>
+    <script src="content/js/Script.js"></script>
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-100">
+
+            <div class="wrap-100 p-b-50 col-md-4 col-12">
+                <img src="content/img/Logo.png" alt="">
+            </div>
+            <div class="col-9 row justify-content-center">
+
+                <!--                 <a class="btn btn-menu draw-border m-2" data-toggle="modal" data-target="#permissionsModal">صلاحيات المستخدم</a> -->
+            </div>
+            <div class="wrap-container box-shadow col-11 row p-md-4 p-2" style="background: #fff;">
+
+
+                <nav class="col-12">
+                    <div class="nav nav-tabs text-center" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active col" id="nav-invoices-tab" data-toggle="tab" href="#nav-invoices" role="tab" aria-controls="nav-invoices" aria-selected="true">الفواتير</a>
+                        <a class="nav-item nav-link col" id="nav-Payable-tab" data-toggle="tab" href="#nav-Payable" role="tab" aria-controls="nav-Payable" aria-selected="true">سندات الصرف</a>
+                        <a class="nav-item nav-link col" id="nav-Receivable-tab" data-toggle="tab" href="#nav-Receivable" role="tab" aria-controls="nav-Receivable" aria-selected="false">سندات القبض</a>
+                        <a class="nav-item nav-link col" id="nav-Items-tab" data-toggle="tab" href="#nav-Items" role="tab" aria-controls="nav-Items" aria-selected="true">بنود الصرف</a>
+                        <a class="nav-item nav-link col" id="nav-Notifications-tab" data-toggle="tab" href="#nav-Notifications" role="tab" aria-controls="nav-Notifications" aria-selected="true">تنبيهات المصروفات</a>
+                        
+
+                    </div>
+                </nav>
+                <div class="tab-content col-12" id="nav-tabContent">
+                    <div class="tab-pane fade" id="nav-Payable" role="tabpanel" aria-labelledby="nav-Payable-tab">
+                        <div class="wrap-container-header col-12 row no-gutters mb-4">
+                            <div class="form-group col-4">
+                                <input type="text" id="filter-Payment-text-box" class="form-control" placeholder="بحث...." oninput="onFilterPaymentTextBoxChanged()">
+                            </div>
+                            <div class="wrap-container-header-tools col text-left">
+                                <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#AddNoticePayable">اضافة سند صرف</a>
+                            </div>
+
+                        </div>
+                        <div class="grid col-12 no-gutters">
+                            <div id="myGridPayment" class="ag-theme-balham myGrid"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Receivable" role="tabpanel" aria-labelledby="nav-Receivable-tab">
+                        <div class="wrap-container-header col-12 row no-gutters mb-4">
+                            <div class="form-group col-4">
+                                <input type="text" id="filter-Recieve-text-box" class="form-control" placeholder="بحث...." oninput="onFilterRecieveTextBoxChanged()">
+                            </div>
+                            <div class="wrap-container-header-tools col text-left">
+                                <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#AddNoticeReceivable">اضافة سند قبض</a>
+                            </div>
+                            
+                        </div>
+                        <div class="grid col-12 no-gutters">
+                            <div id="myGridRecieve" class="ag-theme-balham myGrid"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Items" role="tabpanel" aria-labelledby="nav-Items-tab">
+                        <div class="wrap-container-header col-12 row no-gutters mb-4">
+                            <div class="form-group col-4">
+                                <input type="text" id="filter-Item-text-box" class="form-control" placeholder="بحث...." oninput="onFilterItemTextBoxChanged()">
+                            </div>
+                            <div class="wrap-container-header-tools col text-left">
+                                <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#AddPayableItems">اضافة بند صرف</a>
+                            </div>
+                        </div>
+                        <div class="grid col-12 no-gutters">
+                            <div id="myGridItem" class="ag-theme-balham myGrid"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Notifications" role="tabpanel" aria-labelledby="nav-Notifications-tab">
+                        <div class="wrap-container-header col-12 row no-gutters mb-4">
+                            <div class="form-group col-4">
+                                <input type="text" id="filter-Notify-text-box" class="form-control" placeholder="بحث...." oninput="onFilterNotifyTextBoxChanged()">
+                            </div>
+                            <div class="wrap-container-header-tools col text-left">
+                                <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#AddPayableNotification">اضافة تنبيه مصروف</a>
+                            </div>
+                        </div>
+                        <div class="grid col-12 no-gutters">
+                            <div id="myGridNotify" class="ag-theme-balham myGrid"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="nav-invoices" role="tabpanel" aria-labelledby="nav-invoices-tab">
+                        <div class="wrap-container-header col-12 row no-gutters mb-4">
+                            <div class="form-group col-4">
+                                <input type="text" id="filter-text-box" class="form-control" placeholder="بحث" oninput="onFilterTextBoxChanged()">
+                            </div>
+                            <div class="wrap-container-header-tools col text-left">
+                                <a class="btn btn-menu draw-border justify-content-end" data-toggle="modal" data-target="#Addinvoices">اضافة فاتورة</a>
+                                <a class="btn btn-menu draw-border justify-content-end" href="RestPayments.html">تحصيل باقي فاتورة</a>
+                            </div>
+                        </div>
+        
+                        <div class="grid col-12 no-gutters">
+                            <div id="myGridinvoices" class="ag-theme-balham myGrid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white-5 m-3 pos-fixed">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        Copyright © 2019 <a href="http://www.g7-soft.com/" target="_blank">G7 Software House.</a> All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+            <nav class="social">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>الصفحة الرئيسية </a></li>
+                    <li><a data-toggle="modal" data-target="#ChangePassword"><i class="fas fa-lock"></i>تغيير كلمة المرور </a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i>تسجيل خروج </a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <!-- Payable  -->
+    <div class="modal fade" id="AddNoticePayable" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة سند صرف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> رقم السند </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-date" class="fdatepickere" />
+                            <label for="input-date"> تاريخ السند </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> المدفوع له </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ بالارقام</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ بالحروف</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="نوع الصرف" name="state">
+                                                        <option value="AL">نقدي</option>
+                                                        <option value="WY">شبكة</option>
+                                                </select>
+                            <label class="select mb-1">
+                                                    نوع الصرف
+                                                </label>
+                        </div>
+                        <div class="input form-group col-6 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="بند الصرف" name="state">
+                                                            <option value="AL">مصروفات نثرية</option>
+                                                            <option value="WY">فاتورة كهرباء</option>
+                                                            <option value="WY">فاتورة مياه</option>
+                                                            <option value="WY">فاتورة انترنت</option>
+                                                    </select>
+                            <label class="select mb-1">
+                                                        بند الصرف
+                                                    </label>
+                        </div>
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="editPayableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل سند صرف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                </div>
+                <div class="modal-body date-modal-form">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> رقم السند </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" class="fdatepickere"/>
+                            <label for="input-Name"> تاريخ السند </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> المدفوع له </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ بالارقام</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ بالحروف</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="نوع الصرف" name="state">
+                                                            <option value="AL">نقدي</option>
+                                                            <option value="WY">شبكة</option>
+                                                    </select>
+                            <label class="select mb-1">
+                                                        نوع الصرف
+                                                    </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="بند الصرف" name="state">
+                                                                <option value="AL">مصروفات نثرية</option>
+                                                                <option value="WY">فاتورة كهرباء</option>
+                                                                <option value="WY">فاتورة مياه</option>
+                                                                <option value="WY">فاتورة انترنت</option>
+                                                        </select>
+                            <label class="select mb-1">
+                                                            بند الصرف
+                                                        </label>
+                        </div>
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Receivable -->
+    <div class="modal fade" id="AddNoticeReceivable" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة سند قبض</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                </div>
+                <div class="modal-body date-modal-form">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> رقم السند </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name"  class="fdatepickere"/>
+                            <label for="input-Name"> تاريخ السند </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> المستلم منه </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مقابل</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="نوع الصرف" name="state">
+                                                            <option value="AL">نقدي</option>
+                                                            <option value="WY">شبكة</option>
+                                                    </select>
+                            <label class="select mb-1">
+                                                        نوع الصرف
+                                                    </label>
+                        </div>
+
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="editReceivableModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل سند قبض</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                </div>
+                <div class="modal-body date-modal-form">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> رقم السند </label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" class="fdatepickere" />
+                            <label for="input-Name"> تاريخ السند </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name"> المستلم منه </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مقابل</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">المبلغ</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="نوع الصرف" name="state">
+                                                            <option value="AL">نقدي</option>
+                                                            <option value="WY">شبكة</option>
+                                                    </select>
+                            <label class="select mb-1">
+                                                        نوع الصرف
+                                                    </label>
+                        </div>
+
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Items -->
+    <div class="modal fade" id="AddPayableItems" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة بند صرف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مسلسل</label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">البند</label>
+                        </div>
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="editItemsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل بند صرف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                </div>
+                <div class="modal-body ">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مسلسل</label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">البند</label>
+                        </div>
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Notifications -->
+    <div class="modal fade" id="AddPayableNotification" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة تنبيه مصروف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                </div>
+                <div class="modal-body date-modal-form">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مسلسل</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" class="fdatepickere" />
+                            <label for="input-Name"> تاريخ الاستحقاق </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">البند</label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">القيمة</label>
+                        </div>
+
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="editNotifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل تنبيه مصروف</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                </div>
+                <div class="modal-body date-modal-form">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">مسلسل</label>
+                        </div>
+                        <div class="input form-group col-sm-6 col-12">
+                            <input type="text" id="input-Name" class="fdatepickere" />
+                            <label for="input-Name"> تاريخ الاستحقاق </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">البند</label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-Name" />
+                            <label for="input-Name">القيمة</label>
+                        </div>
+
+                        <!-- <div class="checkbox col-12 row">
+                            <input type="checkbox" id="active">
+                            <label for="active">نشط</label>
+                        </div> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="Addinvoices" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">اضافة فاتورة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-Name" disabled/>
+                            <label for="input-Name"> رقم الفاتورة </label>
+                        </div>
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-position" disabled/>
+                            <label for="input-position"> تاريخ الفاتورة</label>
+                        </div>
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> اسم العميلة</label>
+                        </div>
+                        <div class="input form-group col-6">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> رقم الهاتف</label>
+                        </div>
+                        <div class="input form-group col-6 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="اختر العاملة" name="state">
+                                                <option value="AL">العاملة الاول</option>
+                                                <option value="WY">العاملة الثاني</option>
+                                                <option value="WY">العاملة الثالث</option>
+                                                <option value="WY">العاملة الرابع</option>
+                                                <option value="WY">العاملة الخامس</option>
+                                                <option value="WY">العاملة السادس</option>
+                                                <option value="WY">العاملة السابع</option>
+                                                <option value="WY">العاملة الثامن</option>
+                                        </select>
+                            <label class="select mb-1">
+                                            اختر العاملة
+                                        </label>
+                        </div>
+                        <div class="form-group col-4 no-gutters row">
+                            <span class="col-12">طريقة الدفع</span>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">نقدي</label>
+                            </div>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">شبكة</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-4 no-gutters row">
+                            <span class="col-12">نوع الخصم</span>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio11" name="customRadio1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio11">نسبة</label>
+                            </div>
+                            <div class="custom-control custom-radio pr-4">
+                             
+                                <input type="radio" id="customRadio21" name="customRadio1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio21">مبلغ</label>
+                            </div>
+                        </div>
+                        <div class="input form-group col-md-4 col-4">
+                            <input type="text" id="input-Name"/>
+                            <label for="input-Name"> الخصم </label>
+                        </div>
+                        <div class="checkbox col-2">
+                            <input type="checkbox" id="active">
+                            <label for="active">عرض</label>
+                        </div>
+                        <div class="input form-group col-3 ">
+                            <select class="js-example-basic-single" data-placeholder="اختر التصنيف/العرض" name="state">
+                                                <option value="AL">التصنيف/العرض الاول</option>
+                                                <option value="WY">التصنيف/العرض الثاني</option>
+                                                <option value="WY">التصنيف/العرض الثالث</option>
+                                                <option value="WY">التصنيف/العرض الرابع</option>
+                                                <option value="WY">التصنيف/العرض الخامس</option>
+                                                <option value="WY">التصنيف/العرض السادس</option>
+                                                <option value="WY">التصنيف/العرض السابع</option>
+                                                <option value="WY">التصنيف/العرض الثامن</option>
+                                        </select>
+                        </div>
+                        <div class="input form-group col-3">
+                            <select class="js-example-basic-single" data-placeholder="اختر الخدمة/العرض" name="state">
+                                                    <option value="AL">الخدمة/العرض الاول</option>
+                                                    <option value="WY">الخدمة/العرض الثاني</option>
+                                                    <option value="WY">الخدمة/العرض الثالث</option>
+                                                    <option value="WY">الخدمة/العرض الرابع</option>
+                                                    <option value="WY">الخدمة/العرض الخامس</option>
+                                                    <option value="WY">الخدمة/العرض السادس</option>
+                                                    <option value="WY">الخدمة/العرض السابع</option>
+                                                    <option value="WY">الخدمة/العرض الثامن</option>
+                                            </select>
+                        </div>
+                        
+                        <button type="button" class=" col-md-2 mx-auto no-gutters btn btn-primary save-btn mb-3">اضافة</button>
+                    </form>
+                    <div class="grid col-12 no-gutters">
+                        <div id="myGridAddinvoices" class="ag-theme-balham myGrid"></div>
+                    </div>
+                    <div class=" totals row text-center">
+                        <div class="col-2">
+                            <span>الاضافات</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                        <div class="col-2">
+                            <span>الخصومات</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                        <div class="col-2">
+                            <span>الاجمالي</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ/طباعة</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="editinvoices" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تعديل فاتورة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-Name" disabled/>
+                            <label for="input-Name"> رقم الفاتورة </label>
+                        </div>
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-position" disabled/>
+                            <label for="input-position"> تاريخ الفاتورة</label>
+                        </div>
+                        <div class="input form-group col-4">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> اسم العميلة</label>
+                        </div>
+                        <div class="input form-group col-6">
+                            <input type="text" id="input-position" />
+                            <label for="input-position"> رقم الهاتف</label>
+                        </div>
+                        <div class="input form-group col-6 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="اختر العاملة" name="state">
+                                                <option value="AL">العاملة الاول</option>
+                                                <option value="WY">العاملة الثاني</option>
+                                                <option value="WY">العاملة الثالث</option>
+                                                <option value="WY">العاملة الرابع</option>
+                                                <option value="WY">العاملة الخامس</option>
+                                                <option value="WY">العاملة السادس</option>
+                                                <option value="WY">العاملة السابع</option>
+                                                <option value="WY">العاملة الثامن</option>
+                                        </select>
+                            <label class="select mb-1">
+                                            اختر العاملة
+                                        </label>
+                        </div>
+                        <div class="form-group col-4 no-gutters row">
+                            <span class="col-12">طريقة الدفع</span>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio111" name="customRadio11" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio111">نقدي</label>
+                            </div>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio211" name="customRadio11" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio211">شبكة</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-4 no-gutters row">
+                            <span class="col-12">نوع الخصم</span>
+                            <div class="custom-control custom-radio pr-4">
+                                <input type="radio" id="customRadio1111" name="customRadio111" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1111">نسبة</label>
+                            </div>
+                            <div class="custom-control custom-radio pr-4">
+                             
+                                <input type="radio" id="customRadio2111" name="customRadio111" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2111">مبلغ</label>
+                            </div>
+                        </div>
+                        <div class="input form-group col-md-4 col-4">
+                            <input type="text" id="input-Name11"/>
+                            <label for="input-Name11"> الخصم </label>
+                        </div>
+                        <div class="checkbox col-2">
+                            <input type="checkbox" id="active">
+                            <label for="active">عرض</label>
+                        </div>
+                        <div class="input form-group col-3">
+                            <select class="js-example-basic-single" data-placeholder="اختر التصنيف/العرض" name="state">
+                                                <option value="AL">التصنيف/العرض الاول</option>
+                                                <option value="WY">التصنيف/العرض الثاني</option>
+                                                <option value="WY">التصنيف/العرض الثالث</option>
+                                                <option value="WY">التصنيف/العرض الرابع</option>
+                                                <option value="WY">التصنيف/العرض الخامس</option>
+                                                <option value="WY">التصنيف/العرض السادس</option>
+                                                <option value="WY">التصنيف/العرض السابع</option>
+                                                <option value="WY">التصنيف/العرض الثامن</option>
+                                        </select>
+                        </div>
+                        <div class="input form-group col-3">
+                            <select class="js-example-basic-single" data-placeholder="اختر الخدمة/العرض" name="state">
+                                                    <option value="AL">الخدمة/العرض الاول</option>
+                                                    <option value="WY">الخدمة/العرض الثاني</option>
+                                                    <option value="WY">الخدمة/العرض الثالث</option>
+                                                    <option value="WY">الخدمة/العرض الرابع</option>
+                                                    <option value="WY">الخدمة/العرض الخامس</option>
+                                                    <option value="WY">الخدمة/العرض السادس</option>
+                                                    <option value="WY">الخدمة/العرض السابع</option>
+                                                    <option value="WY">الخدمة/العرض الثامن</option>
+                                            </select>
+                        </div>
+                        
+                        <button type="button" class=" col-md-2 mx-auto no-gutters btn btn-primary save-btn mb-3">اضافة</button>
+                    </form>
+                    <div class="grid col-12 no-gutters">
+                        <div id="myGridEditinvoices" class="ag-theme-balham myGrid"></div>
+                    </div>
+                    <div class=" totals row text-center">
+                        <div class="col-2">
+                            <span>الاضافات</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                        <div class="col-2">
+                            <span>الخصومات</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                        <div class="col-2">
+                            <span>الاجمالي</span>
+                            <p>9999 <span>ر.س</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="editWorkers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تغيير عاملة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12 mt-2">
+                            <select class="js-example-basic-single" data-placeholder="اختر العاملة" name="state">
+                                                <option value="AL">العاملة الاول</option>
+                                                <option value="WY">العاملة الثاني</option>
+                                                <option value="WY">العاملة الثالث</option>
+                                                <option value="WY">العاملة الرابع</option>
+                                                <option value="WY">العاملة الخامس</option>
+                                                <option value="WY">العاملة السادس</option>
+                                                <option value="WY">العاملة السابع</option>
+                                                <option value="WY">العاملة الثامن</option>
+                                        </select>
+                            <label class="select mb-1">
+                                            اختر العاملة
+                                        </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-btn">حفظ</button>
+                    <button type="button" class="btn btn-secondary clear-btn">مسح</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تغيير كلمة السر</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="row justify-content-center">
+                        <div class="input form-group col-12">
+                            <input type="password" id="input-Newpassword" />
+                            <label for="input-Newpassword"> كلمة السر </label>
+                        </div>
+                        <div class="input form-group col-12">
+                            <input type="text" id="input-NewpasswordConfirmation" />
+                            <label for="input-NewpasswordConfirmation"> تأكيد كلمة السر</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save-btn">Save changes</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="msg-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-body text-center">
+                    <img src="content/img/icons/remove.png" class="modal-img bordery">
+                    <h3 class="pt-5 mb-2 text-secondary">هل انت متأكد؟!</h3>
+                    <button type="button" class="btn btn-secondary mb-3 mt-1 close-btn" data-dismiss="modal">الغاء</button>
+                    <button type="button" class="btn btn-primary mb-3 mt-1 save-btn">نعم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="modal fade" id="permissionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-indicator"></div>
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLongTitle">تغيير كلمة السر</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table id="table_permissions" dir="rtl" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>اسم الصلاحية</th>
+                                    <th class="no-sort check text-center">مشاهدة</th>
+                                    <th class="no-sort check text-center">تعديل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>انشاء مستخدم</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>المستخدمين</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>صلاحيات المستخدم</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <td>تغيير كلمة المرور</td>
+                                    <td class="check"></td>
+                                    <td class="check"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">خروج</button>
+                    <button type="button" class="btn btn-primary save-btn">pt/</button>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+    <div id="dropDownSelect1"></div>
+
+    <script>
+        $(document).ready(function() {
+
+            /* $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+                $.fn.dataTable.tables({
+                    visible: true,
+                    api: true
+                }).columns.adjust();
+            });
+
+            $('#table_payable').DataTable({
+                scrollY: 280,
+                scrollX: false,
+                responsive: true,
+                scrollCollapse: true,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "الكل"]
+                ],
+                language: {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                },
+                columnDefs: [{
+                    targets: 'no-sort',
+                    orderable: false,
+                }],
+
+            });
+
+            $('#table_receivable').DataTable({
+                scrollY: 280,
+                scrollX: false,
+                responsive: true,
+                scrollCollapse: true,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "الكل"]
+                ],
+                language: {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                },
+                columnDefs: [{
+                    targets: 'no-sort',
+                    orderable: false,
+                }],
+
+            });
+
+            $(' #table_Items').DataTable({
+                scrollY: 280,
+                scrollX: false,
+                responsive: true,
+                scrollCollapse: true,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "الكل"]
+                ],
+                language: {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                },
+                columnDefs: [{
+                    targets: 'no-sort',
+                    orderable: false,
+                }],
+
+            });
+
+
+
+            $('#table_notification').DataTable({
+                scrollY: 280,
+                scrollX: false,
+                responsive: true,
+                scrollCollapse: true,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "الكل"]
+                ],
+                language: {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                },
+                columnDefs: [{
+                    targets: 'no-sort',
+                    orderable: false,
+                }],
+
+            }); */
+
+
+            /* const ps = new PerfectScrollbar('.dataTables_scrollBody', {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20
+            }); */
+
+
+
+            $('.js-example-basic-single').awselect();
+
+            $(".fdatepickere").datepicker({
+                format: "yyyy/mm/dd",
+                /* container: ".date-modal-form", */
+                autoclose: true
+                });
+            });
+    </script>
+
+<!---------Payment Table --------------------->
+<script>
+    // specify the columns
+    var columnDefsPayment = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "رقم السند",
+            field: "Number",
+            enableRowGroup: true
+        },
+        {
+            headerName: "التاريخ",
+            field: "Date",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الدفع ل",
+            field: "PayTo",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المبلغ",
+            field: "Total",
+            enableRowGroup: true
+        },
+        {
+            headerName: "نوع الصرف",
+            field: "PayType",
+            enableRowGroup: true
+        },
+        {
+            headerName: "بند الصرف",
+            field: "PayBand",
+            enableRowGroup: true
+        },
+        
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm EditBtn fa fa-edit\' data-toggle=\'modal\'data-target=\'#editModal\' title=\'تعديل\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a><a style=\'cursor:pointer;\' class=\'btn btn-link btn-sm PrintBtn\' href="#" title="طباعة" target="_blank"><i class=\'fa fa-print\'></i></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataPayment = [  ]
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsPayment = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsPayment,
+        rowData: dataPayment,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterPaymentTextBoxChanged() {
+    gridOptionsPayment.api.setQuickFilter(document.getElementById('filter-Payment-text-box').value);
+}
+
+    // lookup the container we want the Grid to use
+    var eGridDivPayment = document.querySelector('#myGridPayment');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivPayment, gridOptionsPayment);
+</script>
+
+
+
+<!---------Recieve Table --------------------->
+<script>
+    // specify the columns
+    var columnDefsRecieve = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "رقم السند",
+            field: "Number",
+            enableRowGroup: true
+        },
+        {
+            headerName: "التاريخ",
+            field: "Date",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المستلم منه",
+            field: "RecTo",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المبلغ",
+            field: "Total",
+            enableRowGroup: true
+        },
+        {
+            headerName: "نوع القبض",
+            field: "RecType",
+            enableRowGroup: true
+        },
+        {
+            headerName: "مقابل",
+            field: "RecBand",
+            enableRowGroup: true
+        },
+        
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm EditBtn fa fa-edit\' data-toggle=\'modal\'data-target=\'#editModal\' title=\'تعديل\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a><a style=\'cursor:pointer;\' class=\'btn btn-link btn-sm PrintBtn\' href="#" title="طباعة" target="_blank"><i class=\'fa fa-print\'></i></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataRecieve = []
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsRecieve = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsRecieve,
+        rowData: dataRecieve,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterRecieveTextBoxChanged() {
+    gridOptionsRecieve.api.setQuickFilter(document.getElementById('filter-Recieve-text-box').value);
+}
+
+    // lookup the container we want the Grid to use
+    var eGridDivRecieve = document.querySelector('#myGridRecieve');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivRecieve, gridOptionsRecieve);
+</script>
+
+<!---------Item Table --------------------->
+<script>
+    // specify the columns
+    var columnDefsItem = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "البند",
+            field: "Name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm EditBtn fa fa-edit\' data-toggle=\'modal\'data-target=\'#editModal\' title=\'تعديل\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataItem = []
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsItem = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsItem,
+        rowData: dataItem,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterItemTextBoxChanged() {
+    gridOptionsItem.api.setQuickFilter(document.getElementById('filter-Item-text-box').value);
+}
+
+    // lookup the container we want the Grid to use
+    var eGridDivItem = document.querySelector('#myGridItem');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivItem, gridOptionsItem);
+</script>
+
+
+<!---------Notify Table --------------------->
+<script>
+    // specify the columns
+    var columnDefsNotify = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "تاريخ الاستحقاق",
+            field: "Date",
+            enableRowGroup: true
+        },
+        {
+            headerName: "البند",
+            field: "Name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "القيمة",
+            field: "Value",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm EditBtn fa fa-edit\' data-toggle=\'modal\'data-target=\'#editModal\' title=\'تعديل\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataNotify = []
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsNotify = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsNotify,
+        rowData: dataNotify,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterNotifyTextBoxChanged() {
+    gridOptionsNotify.api.setQuickFilter(document.getElementById('filter-Notify-text-box').value);
+}
+
+    // lookup the container we want the Grid to use
+    var eGridDivNotify = document.querySelector('#myGridNotify');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivNotify, gridOptionsNotify);
+</script>
+
+<script>
+    // specify the columns
+    var columnDefsinvoices = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "رقم الفاتورة",
+            field: "ReciptNumber",
+            enableRowGroup: true
+        },
+        {
+            headerName: "التاريخ",
+            field: "Date",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الاسم",
+            field: "Name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الاجمالي",
+            field: "Total",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المدفوع",
+            field: "Paid",
+            enableRowGroup: true
+        },
+        {
+            headerName: "المتبقي",
+            field: "Rest",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm EditBtn fa fa-edit\' data-toggle=\'modal\'data-target=\'#editinvoices\' title=\'تعديل\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var datainvoices = [{}]
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsinvoices = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsinvoices,
+        rowData: datainvoices,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    function onFilterinvoicesTextBoxChanged() {
+        gridOptionsinvoices.api.setQuickFilter(document.getElementById('filter-invoices-text-box').value);
+    }
+
+
+    // lookup the container we want the Grid to use
+    var eGridDivinvoices = document.querySelector('#myGridinvoices');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivinvoices, gridOptionsinvoices);
+</script>
+
+<script>
+    // specify the columns
+    var columnDefsAddinvoices = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "اسم الخدمة/العرض",
+            field: "name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "السعر",
+            field: "price",
+            enableRowGroup: true
+        },
+        {
+            headerName: "العاملة",
+            field: "worker",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-user\'data-toggle=\'modal\' data-target=\'#editWorkers\'title=\'تغيير العاملة\'></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataAddinvoices = [{}]
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsAddinvoices = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsAddinvoices,
+        rowData: dataAddinvoices,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    
+    // lookup the container we want the Grid to use
+    var eGridDivAddinvoices = document.querySelector('#myGridAddinvoices');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivAddinvoices, gridOptionsAddinvoices);
+</script>
+
+
+<script>
+    // specify the columns
+    var columnDefsEditinvoices = [{
+            headerName: "م",
+            field: "code",
+            enableRowGroup: true,
+            width: 160
+        },
+        {
+            headerName: "اسم الخدمة/العرض",
+            field: "name",
+            enableRowGroup: true
+        },
+        {
+            headerName: "السعر",
+            field: "price",
+            enableRowGroup: true
+        },
+        {
+            headerName: "العاملة",
+            field: "worker",
+            enableRowGroup: true
+        },
+        {
+            headerName: "الإجراءات",
+            cellRenderer: function (params) {
+                return '<a class=\'btn btn-link btn-sm DeleteBtn fa fa-trash\'data-toggle=\'modal\' data-target=\'#msg-modal\'title=\'حذف\'></a><a class=\'btn btn-link btn-sm DeleteBtn fa fa-user\'data-toggle=\'modal\' data-target=\'#editWorkers\'title=\'تغيير العاملة\'></a>'
+            },
+            width: 240,
+            suppressSizeToFit: true,
+            cellClass: 'tools'
+        }
+
+    ];
+    // specify the data
+    var dataEditinvoices = [{}]
+    var autoGroupColumnDef = {
+        cellRendererParams: {
+            checkbox: true,
+        }
+    }
+    // let the grid know which columns and what data to use
+    var gridOptionsEditinvoices = {
+        enableColResize: true,
+        enableSorting: true,
+        enableFilter: true,
+        animateRows: true,
+        rowDragManaged: false, //Enable Drag
+        columnDefs: columnDefsEditinvoices,
+        rowData: dataEditinvoices,
+        autoGroupColumnDef: autoGroupColumnDef,
+        groupSelectsChildren: true,
+        rowSelection: 'multiple',
+        suppressDragLeaveHidesColumns: true,
+        suppressMakeColumnVisibleAfterUnGroup: true,
+        enableRtl: true,
+        pagination: true,
+         onGridReady: function (params) {
+            params.api.sizeColumnsToFit();
+        },
+        onFirstDataRendered(params) {
+            params.api.sizeColumnsToFit();
+        },  
+        rowGroupPanelShow: "always",
+        paginationPageSize: 10,
+        localeText: {
+            // for filter panel
+            page: 'الصفحة',
+            more: 'daMore',
+            to: 'إلي',
+            of: 'من',
+            next: 'التالي',
+            last: 'الأخير',
+            first: 'الأول',
+            previous: 'السابق',
+            loadingOoo: 'جار التحميل...',
+            // for set filter
+            selectAll: 'أختر الكل',
+            searchOoo: 'بحث...',
+            blanks: 'daBlanc',
+            // for number filter and text filter
+            filterOoo: 'بحث...',
+            applyFilter: 'daApplyFilter...',
+            equals: 'daEquals',
+            notEqual: 'daNotEqual',
+            // for number filter
+            lessThan: 'daLessThan',
+            greaterThan: 'daGreaterThan',
+            lessThanOrEqual: 'daLessThanOrEqual',
+            greaterThanOrEqual: 'daGreaterThanOrEqual',
+            inRange: 'daInRange',
+            // for text filter
+            contains: 'daContains',
+            notContains: 'daNotContains',
+            startsWith: 'daStarts dawith',
+            endsWith: 'daEnds dawith',
+            // filter conditions
+            andCondition: 'daAND',
+            orCondition: 'daOR',
+            // the header of the default group column
+            group: 'laGroup',
+            // tool panel
+            columns: 'laColumns',
+            filters: 'laFilters',
+            rowGroupColumns: 'laPivot Cols',
+            rowGroupColumnsEmptyMessage: 'اسحب الأعمدة إلى المجموعة',
+            valueColumns: 'laValue Cols',
+            pivotMode: 'laPivot-Mode',
+            groups: 'laGroups',
+            values: 'laValues',
+            pivots: 'laPivots',
+            valueColumnsEmptyMessage: 'la drag cols to aggregate',
+            pivotColumnsEmptyMessage: 'la drag here to pivot',
+            toolPanelButton: 'la tool panel',
+            // other
+            noRowsToShow: 'لا توجد بيانات',
+            enabled: 'laEnabled',
+            // enterprise menu
+            pinColumn: 'تثبيت العمود',
+            valueAggregation: 'laValue Agg',
+            autosizeThiscolumn: 'تعديل حجم العمود',
+            autosizeAllColumns: 'تعديل أحجام كل الأعمدة',
+            // groupBy: 'laGroup by',
+            ungroupBy: 'laUnGroup by',
+            resetColumns: 'laReset Those Cols',
+            expandAll: 'laOpen-em-up',
+            collapseAll: 'laClose-em-up',
+            toolPanel: 'laTool Panelo',
+            export: 'إستخراج',
+            csvExport: 'إستخراج ملف CSV',
+            excelExport: 'إستخراج ملف Excel',
+            excelXmlExport: 'إستخراج ملف Excel (.xml)',
+            columnChart: 'laColumn',
+            groupedColumn: 'مجمعة',
+            stackedColumn: 'مرصوصة',
+            normalizedColumn: '100% مرصوصة',
+            groupedBar: 'مجمعة',
+            stackedBar: 'مرصوصة',
+            normalizedBar: '100% مرصوصة',
+            scatter: 'laScatter',
+            bubble: 'laBubble',
+            areaChart: 'laArea',
+            area: 'laArea',
+            stackedArea: 'laStacked',
+            normalizedArea: 'la100% Stacked',
+            // enterprise menu pinning
+            pinLeft: 'تثبيت شمال <<',
+            pinRight: 'تثبيت يمين >>',
+            noPin: 'غير مثبت <>',
+            // enterprise menu aggregation and status bar
+            sum: 'laSum',
+            min: 'laMin',
+            max: 'laMax',
+            none: 'laNone',
+            count: 'laCount',
+            average: 'laAverage',
+            filteredRows: 'laFiltered',
+            selectedRows: 'laSelected',
+            totalRows: 'laTotal Rows',
+            totalAndFilteredRows: 'laRows',
+            // standard menu
+            copy: 'نسخ',
+            copyWithHeaders: 'نسخ البيانات والعناوين',
+            ctrlC: 'ctrl + C',
+            paste: 'لصق',
+            ctrlV: 'ctrl + V'
+
+        }
+    };
+
+    
+    // lookup the container we want the Grid to use
+    var eGridDivEditinvoices = document.querySelector('#myGridEditinvoices');
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDivEditinvoices, gridOptionsEditinvoices);
+</script>
+
+
+</body>
+
+</html>
